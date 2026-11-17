@@ -1,5 +1,4 @@
 import { defineConfig } from '@playwright/test';
-
 import dotenv from 'dotenv';
 
 // Load environment variables from .env file
@@ -22,15 +21,15 @@ export default defineConfig({
   workers: 1,
 
   // Test results reporter
-  reporter: 'list',
+  reporter: 'html',
 
   // Shared settings for all tests
   use: {
     // Application base URL
     baseURL: 'https://automationexercise.com',
 
-    // Collect trace on first retry
-    trace: 'on-first-retry',
+    // Retain trace when a test fails
+    trace: 'retain-on-failure',
 
     // Capture screenshots only when tests fail
     screenshot: 'only-on-failure',
